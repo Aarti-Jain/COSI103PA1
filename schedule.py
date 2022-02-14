@@ -1,6 +1,7 @@
 
 
 import json
+from operator import contains
 
 class Schedule():
     
@@ -44,4 +45,7 @@ class Schedule():
         else:
             print("can't sort by "+str(field)+" yet")
             return self
+    #for Problem 6
+    def title(self, phrase):
+        return [course for course in self.courses if course['name'].contains(phrase)]
  
