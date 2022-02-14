@@ -47,5 +47,5 @@ class Schedule():
             return self
     #for Problem 6
     def title(self, phrase):
-        return [course for course in self.courses if course['name'].contains(phrase)]
+        return [course for course in self.courses if phrase in course['name']]
  
