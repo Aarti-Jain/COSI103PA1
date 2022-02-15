@@ -47,6 +47,9 @@ def topmenu():
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
+        elif command in ['title']:
+            title = input("enter a title")
+            schedule.title([title])
         else:
             print('command',command,'is not supported')
             continue
