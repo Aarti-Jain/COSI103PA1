@@ -76,7 +76,7 @@ class Schedule:
     def description(self,phrase):
         #sorts through and returns a list of course with given phrase in description
         return [course for course in self.courses if phrase in course['description']]
-    def time(self, phrase):
+    def type(self, phrase):
         #sorts through a returns a list of courses at a given time
-        return [course for course in self.courses if phrase in course['times']]
+        return [course for course in self.courses if phrase in course['type']]
 
