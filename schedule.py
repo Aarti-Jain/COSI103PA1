@@ -71,9 +71,12 @@ class Schedule:
             return self
     #for Problem 6
     def title(self, phrase):
+        #sorts through and returns a list of the courses with the given name
         return [course for course in self.courses if phrase in course['name']]
     def description(self,phrase):
+        #sorts through and returns a list of course with given phrase in description
         return [course for course in self.courses if phrase in course['description']]
     def time(self, phrase):
+        #sorts through a returns a list of courses at a given time
         return [course for course in self.courses if phrase in course['time']]
-        
+
