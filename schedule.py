@@ -48,4 +48,6 @@ class Schedule():
     #for Problem 6
     def title(self, phrase):
         return [course for course in self.courses if phrase in course['name']]
- 
+    def description(self,phrase):
+        return [course for course in self.courses if phrase in course['description']]
+        
