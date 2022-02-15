@@ -74,4 +74,6 @@ class Schedule:
         return [course for course in self.courses if phrase in course['name']]
     def description(self,phrase):
         return [course for course in self.courses if phrase in course['description']]
+    def time(self, phrase):
+        return [course for course in self.courses if phrase in course['time']]
         
