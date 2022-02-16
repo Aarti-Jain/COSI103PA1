@@ -39,14 +39,14 @@ def topmenu():
             continue
         elif command in ['r','reset']:
             schedule.load_courses()
-            schedule = schedule.enrolled(range(5,1000))    # was this given to us?
+            courses = schedule.enrolled(range(5,1000))    # was this given to us?
             continue
         elif command in ['t', 'term']:
             term = input("enter a term:"+str(terms)+":")
-            schedule = schedule.term([term]).sort('subject') #Did it come with the sort? Or was this something we added?
+            courses = schedule.term([term]).sort('subject') #Did it come with the sort? Or was this something we added?
         elif command in ['s','subject']:
             subject = input("enter a subject:")
-            schedule = schedule.subject([subject])
+            courses = schedule.subject([subject])
         elif command in ['title']:
             title = input("enter a title")
             courses = schedule.title(title)
