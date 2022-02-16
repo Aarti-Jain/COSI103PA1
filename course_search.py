@@ -39,7 +39,7 @@ def topmenu():
             continue
         elif command in ['r','reset']:
             schedule.load_courses()
-            schedule = schedule.enrolled(range(5,1000))
+            schedule = schedule.enrolled(range(5,1000))    # was this given to us?
             continue
         elif command in ['t', 'term']:
             term = input("enter a term:"+str(terms)+":")
@@ -49,7 +49,7 @@ def topmenu():
             schedule = schedule.subject([subject])
         elif command in ['title']:
             title = input("enter a title")
-            schedule.title([title])
+            schedule = schedule.title([title])
         else:
             print('command',command,'is not supported')
             continue

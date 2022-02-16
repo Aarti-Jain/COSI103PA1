@@ -69,8 +69,13 @@ class Schedule:
         else:
             print("can't sort by " + str(field) + " yet")
             return self
+
     #for Problem 6
     def title(self, phrase):
+        """
+
+        :param str phrase:
+        """
         #sorts through and returns a list of the courses with the given name
         return [course for course in self.courses if phrase in course['name']]
     def description(self,phrase):
