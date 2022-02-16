@@ -44,6 +44,6 @@ class Schedule():
         else:
             print("can't sort by "+str(field)+" yet")
             return self
-    def limit(self,field):
-        return Schedule([course for course in self.courses if course['limit']==field])
+    # def limit(self,field):
+    #     return Schedule([course for course in self.courses if course['limit']==field])
  
