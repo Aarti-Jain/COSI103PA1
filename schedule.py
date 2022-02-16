@@ -8,7 +8,7 @@ class Schedule:
         """
         Constructor for Schedule class.
         """
-        self.courses = courses
+        self.courses = tuple(courses)
 
     def getCourses(self):
         return self.courses
@@ -29,7 +29,7 @@ class Schedule:
         :returns: A list of courses taught by the professor in the parameter names.
         :rtype: list[str]
         """
-        return Schedule([course for course in self.courses if course['instructor'][1] in names])
+        return Schedule(tuple(course for course in self.courses if course['instructor'][1] in names))
 
     def email(self,emails):
         """
@@ -38,7 +38,7 @@ class Schedule:
         :returns: A list of courses taught by the professor(s) whose email address(es) matches that in the parameter emails.
         :rtype: list[str]
         """
-        return Schedule([course for course in self.courses if course['instructor'][2] in emails])
+        return Schedule(tuple(course for course in self.courses if course['instructor'][2] in emails))
 
     def term(self,terms):
         """
@@ -46,7 +46,7 @@ class Schedule:
         """
         ''' email returns the courses in a list of term'''
         # Is "terms" a tuple, list, dict, str, or what?
-        return Schedule([course for course in self.courses if course['term'] in terms])
+        return Schedule(tuple(course for course in self.courses if course['term'] in terms))
 
     def enrolled(self, vals):
         """
@@ -55,7 +55,7 @@ class Schedule:
         :returns:
         """
         ''' enrolled filters for enrollment numbers in the list of vals'''
-        return Schedule([course for course in self.courses if course['enrolled'] in vals])
+        return Schedule(tuple(course for course in self.courses if course['enrolled'] in vals))
 
     def subject(self,subjects):
         """
@@ -64,7 +64,7 @@ class Schedule:
         """
         ''' subject filters the courses by subject '''
         # Is "subjects" a tuple, list, dict, str, or what?
-        return Schedule([course for course in self.courses if course['subject'] in subjects])
+        return Schedule(tuple(course for course in self.courses if course['subject'] in subjects))
 
     def sort(self,field):
         if field=='subject':
