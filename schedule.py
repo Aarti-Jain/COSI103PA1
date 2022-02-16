@@ -10,6 +10,9 @@ class Schedule:
         """
         self.courses = courses
 
+    def getCourses(self):
+        return self.courses
+
     def load_courses(self):
         print('getting archived regdata from file')
         with open("courses20-21.json","r",encoding='utf-8') as jsonfile:
