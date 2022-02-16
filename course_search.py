@@ -41,6 +41,9 @@ def topmenu():
             schedule.load_courses()
             schedule = schedule.enrolled(range(5,1000))
             continue
+        elif command in ['l','limit']:
+            limit = input("enter a course limit"+str(terms)+":")
+            schedule - schedule.limit(limit)
         elif command in ['t', 'term']:
             term = input("enter a term:"+str(terms)+":")
             schedule = schedule.term([term]).sort('subject')
