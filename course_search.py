@@ -33,7 +33,7 @@ def topmenu():
         command = input(">> (h for help) ")
         if command=='quit':
             return
-            
+
         elif command in ['h','help']:
             print(TOP_LEVEL_MENU)
             print('-'*40+'\n\n')
@@ -41,28 +41,28 @@ def topmenu():
 
         elif command in ['r','reset']:
             schedule.load_courses()
-            courses = schedule.enrolled(range(5,1000))    # was this given to us?
+            schedule = schedule.enrolled(range(5,1000))    # was this given to us?
             continue
 
         elif command in ['t', 'term']:
             term = input("enter a term:"+str(terms)+"")
-            courses = schedule.term([term]).sort('subject') #Did it come with the sort? Or was this something we added?
+            schedule = schedule.term([term]).sort('subject') #Did it come with the sort? Or was this something we added?
     
         elif command in ['s','subject']:
             subject = input("enter a subject: ")
-            courses = schedule.subject(subject)
+            schedule = schedule.subject(subject)
     
         elif command in ['title']:
             title = input("enter a title: ")
-            courses = schedule.title(title)
+            schedule = schedule.title(title)
 
         else:
             print('command',command,'is not supported')
             continue
 
-        print("courses has",len(courses),'elements',end="\n\n")
+        print("courses has", len(schedule.getCourses()), 'elements',end="\n\n")
         print('here are the first 10')
-        for course in courses[:10]:
+        for course in schedule.getCourses()[:10]:
             print_course(course)
         print('\n'*3)
 
