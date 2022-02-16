@@ -84,3 +84,39 @@ class Schedule:
         #sorts through a returns a list of courses at a given time
         return Schedule(tuple(course for course in self.courses if phrase in course['type']))
 
+
+
+
+
+
+
+#######################################################################
+############################## GRAVEYARD ##############################
+#######################################################################
+
+    # Elizabeth's attempt at a 7e filter
+    # def getCourseTitles(self):
+    #    return tuple(course['name'] for course in self.courses)
+    # def frequency(self, frequency):
+    #     freq = int(frequency)
+    #     if freq == 0:
+    #         return Schedule()
+    #     elif freq > 3:
+    #         raise Exception("There are only three terms available in the json file.")
+    #     elif 0 < freq < 4:
+    #         term1203 = set(self.term("1203").getCourseTitles())
+    #         term1211 = set(self.term("1211").getCourseTitles())
+    #         term1212 = set(self.term("1212").getCourseTitles())
+    #         if freq == 1:
+    #             only_in_1203 = term1203 - term1211 - term1212
+    #             only_in_1211 = term1211 - term1203 - term1212
+    #             only_in_1212 = term1212 - term1203 - term1211
+    #             return Schedule(tuple(course for course in self.courses if course['title'] in only_in_1203 or course['title'] in only_in_1211 or course['title'] in only_in_1212))
+    #         elif freq == 2:
+    #             shared_03_11 = term1203.intersection(term1211) - term1212
+    #             shared_03_12 = term1203.intersection(term1212) - term1211
+    #             shared_12_11 = term1212.intersection(term1211) - term1203
+    #             return Schedule(tuple(course for course in self.courses if course['title'] in shared_12_11 or course['title'] in shared_03_12 or course['title'] in shared_03_11))
+    #         elif freq == 3:
+    #             sharedAll = term1203.intersection(term1211).intersection(term1212)
+    #             return Schedule(tuple(course for course in self.courses if course['title'] in sharedAll))
