@@ -60,8 +60,8 @@ def topmenu():
             print('command',command,'is not supported')
             continue
 
-        print("courses has", len(schedule.getCourses()), 'elements',end="\n\n")
-        print('here are the first 10')
+        print("There are ", len(schedule.getCourses()), " courses that match your filters.",end="\n\n")
+        print("Here are the first 10: ")
         for course in schedule.getCourses()[:10]:
             print_course(course)
         print('\n'*3)
