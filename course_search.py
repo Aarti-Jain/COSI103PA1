@@ -49,14 +49,14 @@ def topmenu():
             schedule = schedule.subject([subject])
         elif command in ['title']:
             title = input("enter a title")
-            schedule = schedule.title([title])
+            courses = schedule.title(title)
         else:
             print('command',command,'is not supported')
             continue
 
-        print("courses has",len(schedule.courses),'elements',end="\n\n")
+        print("courses has",len(courses),'elements',end="\n\n")
         print('here are the first 10')
-        for course in schedule.courses[:10]:
+        for course in courses[:10]:
             print_course(course)
         print('\n'*3)
 
