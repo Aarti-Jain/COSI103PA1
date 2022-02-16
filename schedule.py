@@ -57,14 +57,14 @@ class Schedule:
         ''' enrolled filters for enrollment numbers in the list of vals'''
         return Schedule(tuple(course for course in self.courses if course['enrolled'] in vals))
 
-    def subject(self,subjects):
+    def subject(self,subject):
         """
         This method returns courses of a particular subject(s).
 
         """
         ''' subject filters the courses by subject '''
         # Is "subjects" a tuple, list, dict, str, or what?
-        return Schedule(tuple(course for course in self.courses if course['subject'] in subjects))
+        return Schedule(tuple(course for course in self.courses if course['subject'] in subject))
 
     def sort(self,field):
         if field=='subject':
@@ -76,11 +76,11 @@ class Schedule:
     #for Problem 6
     def title(self, phrase):
         #sorts through and returns a list of the courses with the given name
-        return [course for course in self.courses if phrase in course['name']]
+        return Schedule(tuple(course for course in self.courses if phrase in course['name']))
     def description(self,phrase):
         #sorts through and returns a list of course with given phrase in description
-        return [course for course in self.courses if phrase in course['description']]
+        return Schedule(tuple(course for course in self.courses if phrase in course['description']))
     def type(self, phrase):
         #sorts through a returns a list of courses at a given time
-        return [course for course in self.courses if phrase in course['type']]
+        return Schedule(tuple(course for course in self.courses if phrase in course['type']))
 
