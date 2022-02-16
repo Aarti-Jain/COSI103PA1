@@ -56,8 +56,12 @@ def topmenu():
             title = input("enter a title: ")
             schedule = schedule.title(title)
 
+        elif command in ['d', 'description']:
+            description = input("enter a phrase to search course descriptions for: ")
+            schedule = schedule.description(description)
+
         else:
-            print('command',command,'is not supported')
+            print('command', command ,'is not supported')
             continue
 
         print("There are ", len(schedule.getCourses()), " courses that match your filters.",end="\n\n")
@@ -70,8 +74,7 @@ def print_course(course):
     '''
     print_course prints a brief description of the course 
     '''
-    print(course['subject'],course['coursenum'],course['section'],
-          course['name'],course['term'],course['instructor'])
+    print(course['subject'],course['coursenum'],course['section'],course['name'],course['term'],course['instructor'])
 
 if __name__ == '__main__':
     topmenu()
