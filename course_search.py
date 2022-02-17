@@ -44,7 +44,7 @@ def topmenu():
         elif command in ['t', 'term']:
             term = input("enter a term:"+str(terms)+"")
             schedule = schedule.term([term]).sort('subject') #Did it come with the sort? Or was this something we added?
-        elif command in ['l', 'limit']:
+        elif command in ['l', 'limit']: #added by Leora, sorts into groups with or withour limit
             lim = input("Enter y/n for courses with limit")
             while ((not lim.startswith("y")) and (not lim.startswith("n"))):
                 lim = input("That is an invalid entry. Enter y/n for courses with limit")
