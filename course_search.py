@@ -64,6 +64,10 @@ def topmenu():
         elif command in ['timeofday']:
             time = input("enter a time: ")
             schedule = schedule.type(time)
+            
+        elif command in ['consent']:
+            yesno = input("enter y or yes if you want to see courses that require consent and n or no if not: ")
+            schedule = schedule.consent(yesno)
 
         else:
             print('command',command,'is not supported')
