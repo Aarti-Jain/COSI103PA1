@@ -55,6 +55,14 @@ def topmenu():
         elif command in ['title']:
             title = input("enter a title: ")
             schedule = schedule.title(title)
+            
+        elif command in ['description']:
+            description = input("enter a phrase: ")
+            schedule = schedule.description(description)
+
+        elif command in ['timeofday']:
+            time = input("enter a time: ")
+            schedule = schedule.type(time)
 
         else:
             print('command',command,'is not supported')
