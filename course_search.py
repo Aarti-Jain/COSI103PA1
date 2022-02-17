@@ -33,12 +33,10 @@ def topmenu():
         command = input(">> (h for help) ")
         if command=='quit':
             return
-
         elif command in ['h','help']:
             print(TOP_LEVEL_MENU)
             print('-'*40+'\n\n')
             continue
-
         elif command in ['r','reset']:
             schedule.load_courses()
             schedule = schedule.enrolled(range(5,1000))    # was this given to us?
