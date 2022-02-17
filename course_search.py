@@ -46,9 +46,9 @@ def topmenu():
             schedule = schedule.term([term]).sort('subject') #Did it come with the sort? Or was this something we added?
         elif command in ['l', 'limit']:
             lim = input("Enter y/n for courses with limit")
-            while (lim[0] == ('y') or lim[0] ==('n')):
+            while ((not lim.startswith("y")) and (not lim.startswith("n"))):
                 lim = input("That is an invalid entry. Enter y/n for courses with limit")
-            schedule = schedule.limit(lim == 'y')
+            schedule = schedule.limit(lim.startswith("y"))
         elif command in ['s','subject']:
             subject = input("enter a subject: ")
             schedule = schedule.subject(subject)

@@ -85,8 +85,9 @@ class Schedule:
         return Schedule(tuple(course for course in self.courses if phrase in course['type']))
     def limit(self, limit):
         if limit:
-            return Schedule(tuple(course for course in self.course if  'none' != course['limit']))
-    
+            return Schedule(tuple(course for course in self.courses if  (course['limit']) >= 0))
+        else:
+            return Schedule(tuple(course for course in self.courses if not (course['limit']) == 0))
         # Elizabeth's 7e part
     def consent(self, yesno):
         if yesno == "yes" or yesno == "y":
