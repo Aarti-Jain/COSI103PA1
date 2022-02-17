@@ -85,3 +85,12 @@ class Schedule:
         return Schedule(tuple(course for course in self.courses if phrase in course['type']))
     def limit(self, limit):
         return Schedule(tuple(course for course in self.course if limit <=course['limit']))
+    
+        # Elizabeth's 7e part
+    def consent(self, yesno):
+        if yesno.equals("yes") or yesno.equals("y"):
+            Schedule(tuple(course for course in self.courses if "consent" in course['status_text']))
+        elif yesno.equals("no") or yesno.equals("n"):
+            Schedule(tuple(course for course in self.courses if not "consent" in course['status_text']))
+        else:
+            raise Exception("Invalid input")
