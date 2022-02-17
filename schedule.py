@@ -92,6 +92,6 @@ class Schedule:
         if yesno == "yes" or yesno == "y":
             return Schedule(tuple(course for course in self.courses if "Consent" in course['status_text']))
         elif yesno == "no" or yesno == "n":
-            return Schedule(tuple(course for course in self.courses if not "Consent" in course['status_text']))
+            return Schedule(tuple(course for course in self.courses if "Consent" not in course['status_text']))
         else:
             raise Exception("Invalid input")
