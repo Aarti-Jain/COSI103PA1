@@ -83,6 +83,7 @@ class Schedule:
     def type(self, phrase):
         #sorts through a returns a list of courses at a given time
         return Schedule(tuple(course for course in self.courses if phrase in course['type']))
+    #sorts through and returns list depending on whether or not they have a limit
     def limit(self, limit):
         if limit:
             return Schedule(tuple(course for course in self.courses if not course['limit'] == None))
