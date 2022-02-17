@@ -43,11 +43,12 @@ def topmenu():
             schedule.load_courses()
             schedule = schedule.enrolled(range(5,1000))    # was this given to us?
             continue
-
         elif command in ['t', 'term']:
             term = input("enter a term:"+str(terms)+"")
             schedule = schedule.term([term]).sort('subject') #Did it come with the sort? Or was this something we added?
-    
+        elif command in ['l', 'limit']:
+            lim = input("Enter a limit:")
+            schedule = schedule.limit(lim)
         elif command in ['s','subject']:
             subject = input("enter a subject: ")
             schedule = schedule.subject(subject)
