@@ -84,7 +84,8 @@ class Schedule:
         #sorts through a returns a list of courses at a given time
         return Schedule(tuple(course for course in self.courses if phrase in course['type']))
     def limit(self, limit):
-        return Schedule(tuple(course for course in self.course if limit <=course['limit']))
+        if limit:
+            return Schedule(tuple(course for course in self.course if  'none' != course['limit']))
     
         # Elizabeth's 7e part
     def consent(self, yesno):
