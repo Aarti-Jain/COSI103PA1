@@ -73,7 +73,7 @@ class Schedule:
             print("can't sort by " + str(field) + " yet")
             return self
 
-    #for Problem 6
+    #for Problem 6 - Leora
     def title(self, phrase):
         #sorts through and returns a list of the courses with the given name
         return Schedule(tuple(course for course in self.courses if phrase in course['name']))
@@ -83,7 +83,7 @@ class Schedule:
     def type(self, phrase):
         #sorts through a returns a list of courses at a given time
         return Schedule(tuple(course for course in self.courses if phrase in course['type']))
-    #sorts through and returns list depending on whether or not they have a limit
+    #Leora sorts through and returns list depending on whether or not they have a limit
     def limit(self, limit):
         if limit:
             return Schedule(tuple(course for course in self.courses if not course['limit'] == None))
