@@ -80,7 +80,6 @@ def topmenu():
         elif command == "not cosi":
             notCOSIClass()
 
-
         else:
             print('command',command,'is not supported')
             continue
