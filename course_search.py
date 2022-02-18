@@ -70,6 +70,10 @@ def topmenu():
             yesno = input("enter y or yes if you want to see courses that require consent and n or no if not: ")
             schedule = schedule.consent(yesno)
 
+        #Aarthi Part 7e
+        elif command in ['g', 'greaterthanhundred']:
+            schedule = schedule.enrolledGreaterHundred()
+
         else:
             print('command',command,'is not supported')
             continue

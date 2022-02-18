@@ -97,3 +97,10 @@ class Schedule:
             return Schedule(tuple(course for course in self.courses if "Consent" not in course['status_text']))
         else:
             raise Exception("Invalid input")
+            
+    #Aarthi 6c
+    def enrolledGreaterHundred(self):
+        ''' filters for courses that have more than 100 students enrolled '''
+        return Schedule([course for course in self.courses if course['enrolled'] > 100])
+
+
