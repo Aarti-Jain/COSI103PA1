@@ -45,7 +45,7 @@ def topmenu():
             term = input("enter a term:"+str(terms)+"")
             schedule = schedule.term([term]).sort('subject') #Did it come with the sort? Or was this something we added?
         elif command in ['l', 'limit']: #added by Leora, sorts into groups with or withour limit
-            lim = input("Enter y/n for courses with limit")
+            lim = input("Enter y/n for courses with limit") #Uses user code
             while ((not lim.startswith("y")) and (not lim.startswith("n"))):
                 lim = input("That is an invalid entry. Enter y/n for courses with limit")
             schedule = schedule.limit(lim.startswith("y"))
@@ -75,6 +75,11 @@ def topmenu():
         elif command in ['g', 'greaterthanhundred']:
             schedule = schedule.enrolledGreaterHundred()
 
+        #Aarti Part 7e
+        elif command == "not cosi":
+            notCOSIClass()
+
+
         else:
             print('command',command,'is not supported')
             continue
@@ -91,6 +96,13 @@ def print_course(course):
     '''
     print(course['subject'],course['coursenum'],course['section'],
           course['name'],course['term'],course['instructor'])
+
+#Aarti's question 7e
+def notCOSIClass():
+    """ print the classes that are not COSI"""
+    for course in schedule.courses:
+        if course['subject'] != "COSI":
+            print(course['name'])
 
 if __name__ == '__main__':
     topmenu()
