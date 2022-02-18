@@ -75,16 +75,35 @@ class Schedule:
 
     #for Problem 6 - Leora
     def title(self, phrase):
+        """
+        :parameter  phrase: is the phrase to search for in name
+        :return: a Schedule containing only courses with the phrase in name
+        """
         #sorts through and returns a list of the courses with the given name
         return Schedule(tuple(course for course in self.courses if phrase in course['name']))
     def description(self,phrase):
+        """
+        :parameter phrase: the phrase to search for in description
+        :return: a schedule containing only courses with the phrase in the description
+        """
         #sorts through and returns a list of course with given phrase in description
         return Schedule(tuple(course for course in self.courses if phrase in course['description']))
     def type(self, phrase):
+        """
+        :parameter phrase: The phrase to search for in type
+        :return: a Schedule containing only courses with phrase in given type
+        """
         #sorts through a returns a list of courses at a given time
         return Schedule(tuple(course for course in self.courses if phrase in course['type']))
     #Leora sorts through and returns list depending on whether or not they have a limit
+    
     def limit(self, limit):
+        """
+    Tells whether or not there is a limit
+    :param limit - this tells whether or not the class list will have limits
+    :return: a schedule with class with limits or none
+
+    """
         if limit:
             return Schedule(tuple(course for course in self.courses if not course['limit'] == None))
         else:
