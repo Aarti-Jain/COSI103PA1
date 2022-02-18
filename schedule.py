@@ -103,4 +103,7 @@ class Schedule:
         ''' filters for courses that have more than 100 students enrolled '''
         return Schedule([course for course in self.courses if course['enrolled'] > 100])
 
-
+    #Aarti's part 6c
+    def filterLessthan50():
+        """Filters the classes where the enrollment is less than or equal to 50"""
+        return [course for course in Schedule.courses if course['enrolled']<=50]

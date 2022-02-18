@@ -74,6 +74,11 @@ def topmenu():
         elif command in ['g', 'greaterthanhundred']:
             schedule = schedule.enrolledGreaterHundred()
 
+        #Aarti Part 7e
+        elif command == "not cosi":
+            notCOSIClass()
+
+
         else:
             print('command',command,'is not supported')
             continue
@@ -90,6 +95,13 @@ def print_course(course):
     '''
     print(course['subject'],course['coursenum'],course['section'],
           course['name'],course['term'],course['instructor'])
+
+#Aarti's question 7e
+def notCOSIClass():
+    """ print the classes that are not COSI"""
+    for course in schedule.courses:
+        if course['subject'] != "COSI":
+            print(course['name'])
 
 if __name__ == '__main__':
     topmenu()
