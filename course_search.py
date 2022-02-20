@@ -71,8 +71,11 @@ def topmenu():
             schedule = schedule.consent(yesno)
 
         #Aarthi Part 7e
+<<<<<<< HEAD
         #Filters for courses with over 100 students enrolled 
         #Returns all courses > 100 students enrolled
+=======
+>>>>>>> parent of d01c673 (added comment for aarthi part 7e code)
         elif command in ['g', 'greaterthanhundred']:
             schedule = schedule.enrolledGreaterHundred()
 
