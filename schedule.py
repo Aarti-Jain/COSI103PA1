@@ -120,11 +120,11 @@ class Schedule:
             return schedule
         else:
             raise Exception("Invalid input")
-            
+
     #Aarthi 6c
     def enrolledGreaterHundred(self):
         ''' filters for courses that have more than 100 students enrolled '''
-        return Schedule([course for course in self.courses if course['enrolled'] > 100])
+        return Schedule(tuple(course for course in self.courses if course['enrolled'] > 100))
 
     #Aarti's part 6c
     def filterLessthan50():
